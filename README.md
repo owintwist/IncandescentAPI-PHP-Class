@@ -47,11 +47,12 @@ See [IncandescentAPI documentation](http://incandescent.xyz)
 
 _This method return filtered results._
 
-_object_ `$results` = IncandescentAPI**::getMergedResults** ( _mixed_ `$project_id` )
+_array_ `$results` = IncandescentAPI**::getMergedResults** ( _mixed_ `$project_id` [ , _string_ `$order` ] )
 
-Parameter `$project_id` is a request ID returned by previous **::addImage()**.  
+Parameter `$project_id` must be a string with a request ID returned by previous **::addImage()** OR an array of multiples request ID.   
+Parameter `$order` must be `domain` OR `image` (default is `domain`)
 
-Return `$results` as raw IncandescentAPI results.  
+Return `$results` a simple array of standard IncandescentAPI object(s), ordered by `$order`.  
 Return `false` if no result.  
 
 
